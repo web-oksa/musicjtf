@@ -1,0 +1,115 @@
+.header {
+  background: url(../img/bg-header.svg) top no-repeat;
+  height: 150px;
+  &__content {
+    display: flex;
+    padding: 0 20px;
+    font-family: "Play";
+    font-style: normal;
+    font-weight: bold;
+  }
+  &__colum {
+    flex: 0 1 50%;
+    padding: 30px 0 0 0;
+    &:nth-child(2) {
+      flex: 0 0 120px;
+      padding: 15px 0 0 0;
+      text-align: center;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+      //flex: 0 1 33.333%;
+      text-align: center;
+      list-style: none;
+      margin: 0 10px;
+    }
+    @media (min-width: 1440px) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+  &__link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #BDA39B;
+    text-decoration: none;
+    transition: 0.5s;
+    @media (min-width: 992px) {
+      &:hover {
+        background-color: $mainSecondColor;
+        color: #fff;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.actions-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  &__item {
+    padding: 0 20px;
+    border-left: 2px solid rgba(189, 163, 155, 0.30);
+    &:first-child {
+      border: none;
+    }
+  }
+  &__lable {
+    margin-bottom: 3px;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 400;
+    color: $accentColor;
+    text-align: right;
+  }
+  &__phone {
+    background: url(../img/icons/header/call.svg) left no-repeat;
+    padding: 0 0 0 30px;
+    font-size: 14px;
+    color: #BDA39B;
+    text-decoration: none;
+  }
+  &__login {
+    background: url(../img/icons/header/login.svg) left no-repeat;
+    padding: 0 0 0 30px;
+    font-size: 14px;
+    color: #BDA39B;
+    text-decoration: none;
+  }
+  &__reg {
+    background: url(../img/icons/header/reg.svg) left no-repeat;
+    padding: 0 0 0 30px;
+    font-size: 14px;
+    color: #BDA39B;
+    text-decoration: none;
+  }
+  &__basket {
+    position: relative;
+    background: url(../img/icons/header/basket.svg) left no-repeat;
+    padding: 0 0 0 30px;
+    font-size: 14px;
+    color: #BDA39B;
+    text-decoration: none;
+    span {
+      position: absolute;
+      background: $accentColor;
+      padding: 2px 10px;
+      border-radius: 15px;
+      color: #fff;
+      bottom: 10px;
+      right: -12px;
+    }
+  }
+  
+}
