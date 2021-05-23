@@ -8,6 +8,7 @@ let path = {
     js: projectFolder + "/js/",
     img: projectFolder + "/img/",
     fonts: projectFolder + "/fonts/",
+    iconsfont: projectFolder + "/iconsfont/",
   },
   src: {
     html: [sourceFolder + "/*.html", "!" + sourceFolder + "/_*.html"],
@@ -15,6 +16,7 @@ let path = {
     js: sourceFolder + "/js/script.js",
     img: sourceFolder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
     fonts: sourceFolder + "/fonts/*.ttf",
+    iconsfont: sourceFolder + "/iconsfont/*.{svg,ttf,woff}",
   },
   watch: {
     html: sourceFolder + "/**/*.html",
@@ -138,6 +140,11 @@ gulp.task("otf2ttf", function () {
     .pipe(dest(sourceFolder + "/fonts/"));
 });
 
+function iconsfont() {
+  return src(path.src.iconsfont)
+    .pipe(dest(path.build.iconsfont));
+}
+
 function watchFiles(params) {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
@@ -149,9 +156,10 @@ function clean(parms) {
   return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts));
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, iconsfont));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.iconsfont = iconsfont;
 exports.fonts = fonts;
 exports.images = images;
 exports.js = js;

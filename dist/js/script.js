@@ -1,6 +1,7 @@
-// проверка, поддерживает ли браузер формат webp
-// и добавления класса webp, в случае если формат поддерживается
+"use strict";
 
+// проверка, поддерживает ли браузер формат webp
+// и добавление класса webp, в случае если формат поддерживается
 function testWebP(callback) {
   var webP = new Image();
   webP.onload = webP.onerror = function () {
@@ -17,3 +18,15 @@ testWebP(function (support) {
     document.querySelector("body").classList.add("no-webp");
   }
 });
+
+// бургер-меню
+
+const btnNav = document.querySelector('.btn-nav'),
+      navBody = document.querySelector('.nav__body');
+
+  btnNav.addEventListener('click', () => {
+    btnNav.classList.toggle('btn-nav_active');
+    navBody.classList.toggle('nav__body_active');
+    
+    return false
+  })

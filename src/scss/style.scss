@@ -2,6 +2,7 @@
 @import "variables";
 @import "mixins";
 @import "fonts";
+@import "iconsfont";
 
 @import "header";
 
@@ -17,8 +18,5 @@
 .container {
   max-width: $maxWidthContainer;
   margin: 0 auto;
-  @media (min-width: 1440px) {
-    max-width: 1600px;
-  }
 }
 //</ОСНОВНАЯ СЕТКА>============================================================================
