@@ -490,6 +490,10 @@ template {
 }
 
 .header__top {
+  background: #1E1E1E;
+}
+
+.header__top-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -501,14 +505,19 @@ template {
           align-items: center;
   width: 100%;
   height: 60px;
-  padding: 0 60px;
-  background: #1E1E1E;
+  padding: 0 40px;
   font-family: "Play";
   font-style: normal;
   font-weight: bold;
 }
 
 .header__bottom {
+  background: -webkit-gradient(linear, left top, right top, from(#8338FD), color-stop(112.95%, #38FD92));
+  background: -o-linear-gradient(left, #8338FD 0%, #38FD92 112.95%);
+  background: linear-gradient(90deg, #8338FD 0%, #38FD92 112.95%);
+}
+
+.header__bottom-content {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -521,10 +530,7 @@ template {
           align-items: center;
   width: 100%;
   height: 130px;
-  padding: 0 60px;
-  background: -webkit-gradient(linear, left top, right top, from(#8338FD), color-stop(112.95%, #38FD92));
-  background: -o-linear-gradient(left, #8338FD 0%, #38FD92 112.95%);
-  background: linear-gradient(90deg, #8338FD 0%, #38FD92 112.95%);
+  padding: 0 40px;
   font-family: "Play";
   font-style: normal;
   font-weight: bold;
@@ -540,10 +546,73 @@ template {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  /* &__link {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s;
+    @media (min-width: 992px) {
+      &:hover {
+        color: #fff;
+      }
+    }
+    &.icon-phone::before {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 10px 0 0;
+      font-size: 24px;
+      @media (max-width: 767px) {
+        margin: 0;
+      }
+    }
+    &.icon-login::before {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 10px 0 0;
+      font-size: 24px;
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+    &.icon-reg::before {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 10px 0 0;
+      font-size: 24px;
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+  &-basket {
+    position: relative;
+    &.icon-basket::before {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 24px;
+    }
+    span {
+      position: absolute;
+      bottom: 10px;
+      right: -15px;
+      background: $accentColor;
+      padding: 3px 8px;
+      border-radius: 15px;
+      font-size: 14px;
+      line-height: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+  @media (max-width: 767px) {
+    &-phone {
+      font-size: 0;
+    }
+  } */
 }
 
 .actions-header__item {
-  padding: 0 20px;
+  padding: 0 25px;
   border-left: 2px solid rgba(189, 163, 155, 0.3);
 }
 
@@ -551,8 +620,8 @@ template {
   border: none;
 }
 
-.actions-header__lable {
-  margin-bottom: 3px;
+.actions-header-lable {
+  margin-bottom: -8px;
   font-family: "Roboto";
   font-size: 12px;
   font-weight: 400;
@@ -560,40 +629,48 @@ template {
   text-align: right;
 }
 
-.actions-header__phone {
-  background: url(../img/icons/header/call.svg) left no-repeat;
-  padding: 0 0 0 30px;
+.actions-header-link {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.actions-header__login {
-  background: url(../img/icons/header/login.svg) left no-repeat;
-  padding: 0 0 0 30px;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
+.actions-header-phone::before {
+  margin: 0 10px 0 0;
+  font-size: 24px;
 }
 
-.actions-header__reg {
-  background: url(../img/icons/header/reg.svg) left no-repeat;
-  padding: 0 0 0 30px;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
+.actions-header-login::before {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px 0 0;
+  font-size: 24px;
 }
 
-.actions-header__basket {
+.actions-header-reg::before {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px 0 0;
+  font-size: 24px;
+}
+
+.actions-header-basket {
   position: relative;
-  background: url(../img/icons/header/basket.svg) left no-repeat;
-  padding: 0 0 0 30px;
 }
 
-.actions-header__basket span {
+.actions-header-basket::before {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 24px;
+}
+
+.actions-header-basket span {
   position: absolute;
   bottom: 10px;
-  right: -12px;
+  right: -15px;
   background: #F49300;
   padding: 3px 8px;
   border-radius: 15px;
@@ -643,9 +720,9 @@ template {
   font-size: 16px;
   color: #fff;
   text-decoration: none;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .btn-nav {
@@ -665,6 +742,10 @@ template {
 }
 
 @media (min-width: 992px) {
+  .actions-header-link:hover {
+    color: #fff;
+  }
+
   .nav__link:hover {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 12px;
@@ -678,11 +759,11 @@ template {
 }
 
 @media (max-width: 991px) {
-  .header__top {
+  .header__top-content {
     padding: 0 20px;
   }
 
-  .header__bottom {
+  .header__bottom-content {
     padding: 0 20px;
     height: 100px;
   }
@@ -697,7 +778,7 @@ template {
 }
 
 @media (max-width: 767px) {
-  .header__top {
+  .header__top-content {
     height: 50px;
   }
 
@@ -705,27 +786,20 @@ template {
     padding: 0 15px;
   }
 
-  .actions-header__lable {
+  .actions-header-lable {
     display: none;
   }
 
-  .actions-header__phone {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    padding: 0;
+  .actions-header-link {
     font-size: 0;
-    line-height: 14px;
   }
 
-  .actions-header__login {
-    background: none;
-    padding: 0;
+  .actions-header-link::before {
+    margin: 0;
   }
 
-  .actions-header__reg {
-    background: none;
-    padding: 0;
+  .actions-header-basket span {
+    bottom: 0;
   }
 
   .nav__body {

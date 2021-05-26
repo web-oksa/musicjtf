@@ -21,12 +21,12 @@ testWebP(function (support) {
 
 // бургер-меню
 
-const btnNav = document.querySelector('.btn-nav'),
-      navBody = document.querySelector('.nav__body');
+const btnNav = document.querySelector(".btn-nav"),
+  navBody = document.querySelector(".nav__body"),
+  body = document.querySelector("body");
 
-  btnNav.addEventListener('click', () => {
-    btnNav.classList.toggle('btn-nav_active');
-    navBody.classList.toggle('nav__body_active');
-    
-    return false
-  })
+btnNav.addEventListener("click", () => {
+  btnNav.classList.toggle("btn-nav_active");
+  navBody.classList.toggle("nav__body_active");
+  body.classList.toggle(".body-hidden");
+});
